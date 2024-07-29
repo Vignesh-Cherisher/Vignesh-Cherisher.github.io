@@ -1,5 +1,29 @@
 import { ReducedResourceItem, ResourceItem } from "../types/types";
 
+let counter = 0
+const materialNames: string[] = [
+  "Rubber",
+  "Glue",
+  "Steel",
+  "Wood",
+  "Plastic",
+  "Glass",
+  "Ceramic",
+  "Concrete",
+  "Copper",
+  "Aluminum",
+  "Fiberglass",
+  "Carbon Fiber",
+  "Leather",
+  "Paper",
+  "Foam",
+  "Silicon",
+  "Granite",
+  "Marble",
+  "Brass",
+  "Bronze",
+];
+
 export class ParseError extends Error {
   constructor(message: string) {
     super(message);
@@ -53,7 +77,7 @@ export const reduceResourceItemObj = (
   resourceItemObj: ResourceItem
 ): ReducedResourceItem => {
   const keysToRemove = ["id"];
-  const reducedResourceItemObj = reduceObject(resourceItemObj, keysToRemove);
+  const reducedResourceItemObj = changeNameValue(reduceObject(resourceItemObj, keysToRemove));
   return reducedResourceItemObj as ReducedResourceItem;
 };
 
@@ -72,3 +96,20 @@ const reduceObject = (obj: any, keysToRemove: string[]): any => {
     return obj;
   }
 };
+
+const changeNameValue = (obj: ReducedResourceItem) : ReducedResourceItem => {
+  const randomName = generateUniqueName()
+  obj.name = randomName
+  return obj
+}
+
+const generateUniqueName= (): string => {
+  counter++;  
+  return `${counter}_${materialNames[generateRandomNumber()]}_${Math.random()
+    .toString(36)
+    .substr(2, 9)}`;
+}
+
+const generateRandomNumber = () : number => {
+  return +(Math.random() * 20).toFixed(0);
+}
