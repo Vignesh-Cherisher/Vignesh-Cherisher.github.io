@@ -107,7 +107,7 @@ const generateUniqueName= (): string => {
   counter++;  
   return `${counter}_${materialNames[generateRandomNumber()]}_${Math.random()
     .toString(36)
-    .substr(2, 9)}`;
+    .substr(2, 2)}`;
 }
 
 const generateRandomNumber = () : number => {
