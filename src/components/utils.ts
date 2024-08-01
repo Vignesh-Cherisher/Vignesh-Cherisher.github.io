@@ -1,6 +1,5 @@
 import { ReducedResourceItem, ResourceItem } from "../types/types";
 
-let counter = 0
 const materialNames: string[] = [
   "Rubber",
   "Glue",
@@ -22,6 +21,7 @@ const materialNames: string[] = [
   "Marble",
   "Brass",
   "Bronze",
+  "Gold"
 ];
 
 export class ParseError extends Error {
@@ -76,7 +76,7 @@ export const isResourceItem = (object: any): object is ResourceItem => {
 export const reduceResourceItemObj = (
   resourceItemObj: ResourceItem
 ): ReducedResourceItem => {
-  const keysToRemove = ["id"];
+  const keysToRemove = ["id","version","_schema_component"];
   const reducedResourceItemObj = changeNameValue(reduceObject(resourceItemObj, keysToRemove));
   return reducedResourceItemObj as ReducedResourceItem;
 };
@@ -104,8 +104,7 @@ const changeNameValue = (obj: ReducedResourceItem) : ReducedResourceItem => {
 }
 
 const generateUniqueName= (): string => {
-  counter++;  
-  return `${counter}_${materialNames[generateRandomNumber()]}_${Math.random()
+  return `${materialNames[generateRandomNumber()]}_${Math.random()
     .toString(36)
     .substr(2, 2)}`;
 }

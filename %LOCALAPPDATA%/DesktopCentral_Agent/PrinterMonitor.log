@@ -87,3 +87,25 @@ MaxPrintPages = 4294967295
 GdiPlusToken = 22678828
 ExcludedEscapes = 4117, 37, 4118, 4115, 4121, "
 29-07-2024	16:47:57.664	 INFO	 36192	 39744	LateInitialization	"Intialization finished"
+29-07-2024	17:05:08.230	 INFO	 36740	 37064	DllMain	"DLL_PROCESS_ATTACH Wed May 29 23:13:48 2024 11.3.2416.6"
+29-07-2024	17:05:08.234	 INFO	 36740	 37064	DllMain	"PROCESS ATTACHED"
+29-07-2024	17:05:08.235	 INFO	 36740	 34804	LateInitialization	"Intialization..."
+29-07-2024	17:05:08.236	 INFO	 36740	 34804	LoadDisplayDevicesName	"DisplayDevices : "
+29-07-2024	17:05:08.238	 INFO	 36740	 34804	LoadDisplayDevicesName	"\\.\DISPLAY1"
+29-07-2024	17:05:08.239	 INFO	 36740	 34804	LoadDisplayDevicesName	"\\.\DISPLAY2"
+29-07-2024	17:05:08.241	 INFO	 36740	 34804	LoadDisplayDevicesName	"\\.\DISPLAY3"
+29-07-2024	17:05:08.252	ERROR	 36740	 34804	LateInitialization	"std::exception caught = GetFileVersionInfoSizeW failed with 1813
+"
+29-07-2024	17:05:08.253	 INFO	 36740	 34804	LateInitialization	"Exe = C:\Users\vignesh.muruganandan\AppData\Local\Programs\Git\usr\bin\bash.exe
+ProductName = 
+FileDescription = 
+ShadowFolder = %LOCALAPPDATA%\EndpointDLP\print-shadow
+ParsingMode = Hybrid
+DeletePrinterShadowFiles = 1
+PrinterUseDisplayDevicesList = 0
+EnablePrinterEscapeProcessing = 1
+EnableWatermarkForAll = 0
+MaxPrintPages = 4294967295
+GdiPlusToken = 23709406
+ExcludedEscapes = 4117, 37, 4118, 4115, 4121, "
+29-07-2024	17:05:08.255	 INFO	 36740	 34804	LateInitialization	"Intialization finished"
